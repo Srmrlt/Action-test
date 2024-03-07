@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Create Docker Image Name
-        run: echo "REP_NAME=${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
-      - run: echo $REP_NAME
+        run: |
+          echo "IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+          echo $IMAGE_NAME
 
