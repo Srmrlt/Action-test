@@ -3,11 +3,12 @@ on:
   workflow_call:
   workflow_dispatch:
   push:
-
+env:
+  rep_name: $GITHUB_REPOSITORY | cut -d '/' -f 2
 jobs:
   echo_rep_n:
     name: Test triggers
     runs-on: ubuntu-22.04
     steps:
       - name: Test triggers
-        run: echo $GITHUB_REPOSITORY | cut -d '/' -f 2
+        run: echo $rep_name
