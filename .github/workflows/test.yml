@@ -5,7 +5,7 @@ on:
   push:
 env:
   REP_NAME1: $GITHUB_REPOSITORY | cut -d '/' -f 2
-  REP_NAME2: (echo ${{ github.repository }}) | cut -d '/' -f 2
+  REP_NAME2: ${{ github.repository | cut -d '/' -f 2 }}
   REP_NAME3: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}
 jobs:
   echo_rep_n:
@@ -17,4 +17,4 @@ jobs:
       - run: echo $REP_NAME3
       - run: echo ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}
       - run: echo $GITHUB_REPOSITORY | cut -d '/' -f 2
-
+      - run: echo ${{ github.repository }} | cut -d '/' -f 2
