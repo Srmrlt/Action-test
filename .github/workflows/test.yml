@@ -3,18 +3,15 @@ on:
   workflow_call:
   workflow_dispatch:
   push:
-env:
-  REP_NAME1: $GITHUB_REPOSITORY | cut -d '/' -f 2
-  REP_NAME2: ${{ github.repository | cut -d '/' -f 2 }}
-  REP_NAME3: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}
 jobs:
   echo_rep_n:
     name: Test triggers
     runs-on: ubuntu-22.04
     steps:
-      - run: echo $REP_NAME1
-      - run: echo $REP_NAME2
-      - run: echo $REP_NAME3
+      - name: Create Docker Image Name
+        run: echo "REP_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+      - run: echo $REP_NAME
+
       - run: echo ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}
       - run: echo $GITHUB_REPOSITORY | cut -d '/' -f 2
       - run: echo ${{ github.repository }} | cut -d '/' -f 2
