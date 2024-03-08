@@ -12,3 +12,5 @@ jobs:
         run: echo "IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
       - run: echo $IMAGE_NAME
 
+
+
