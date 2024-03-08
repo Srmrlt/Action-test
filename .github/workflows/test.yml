@@ -12,6 +12,8 @@ jobs:
         run: echo "IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
       - name: tra-ta-ta
         run: echo $IMAGE_NAME
+      - name: pull name
+        run: echo ${{ github.event.pull_request.number }}
 
 
 
