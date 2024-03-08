@@ -13,10 +13,10 @@ jobs:
       - name: tra-ta-ta
         run: echo $IMAGE_NAME
 
-#      - name: Set Commit Tag
-#        run: echo "COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+      - name: Set Commit Tag
+        run: echo "COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
       - name: tra-ta-ta-22
-        run: echo $COMMIT_SHA
+        run: echo $IMAGE_NAME:$COMMIT_SHA
 
 
