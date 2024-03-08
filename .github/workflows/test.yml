@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Create Docker Image Name
         run: echo "IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
-      - run: echo $IMAGE_NAME
+      - name: tra-ta-ta
+        run: echo $IMAGE_NAME
 
 
 
