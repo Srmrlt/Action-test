@@ -15,7 +15,7 @@ jobs:
       - name: pull name
         run: echo ${{ github.event.pull_request.number }}
       - name: Date
-        run: echo ${GITHUB_RUN_STARTED_AT}
+        run: echo ${GITHUB_RUN_STARTED}
       - name: ID
         run: echo ${GITHUB_RUN_ID}
 
