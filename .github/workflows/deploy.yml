@@ -9,6 +9,6 @@ on:
 jobs:
   docker:
     uses: Srmrlt/Action-test/.github/workflows/docker.yml@actions
-    with:
-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
-      dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
+#    with:
+#      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+#      dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
