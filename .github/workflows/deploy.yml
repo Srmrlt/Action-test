@@ -1,0 +1,14 @@
+name: Deploy to server
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  docker:
+    uses: Srmrlt/Action-test/.github/workflows/docker.yml@actions
+    with:
+      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
