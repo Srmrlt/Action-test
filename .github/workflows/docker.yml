@@ -1,19 +1,12 @@
 name: Docker image build
 on:
+  workflow_dispatch:
   workflow_call:
     secrets:
       DOCKERHUB_USERNAME:
         required: true
       DOCKERHUB_TOKEN:
         required: true
-
-#    inputs:
-#      dockerhub_username:
-#        required: true
-#        type: string
-#      dockerhub_token:
-#        required: true
-#        type: string
 
 jobs:
   docker_image:
@@ -30,5 +23,3 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-#          username: ${{ inputs.dockerhub_username }}
-#          password: ${{ inputs.dockerhub_token }}
